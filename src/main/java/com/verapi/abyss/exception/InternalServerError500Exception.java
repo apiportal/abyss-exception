@@ -43,6 +43,6 @@ public class InternalServerError500Exception extends AbyssApiException {
     }
 
     public ApiSchemaError getApiError() {
-        return this.apiSchemaError;
+        return (this.apiSchemaError == null) ? new ApiSchemaError() : this.apiSchemaError;
     }
 }
