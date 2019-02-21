@@ -39,7 +39,7 @@ public class AbyssApiException extends AbyssException {
 
     public AbyssApiException(ApiSchemaError apiSchemaError) {
         super(apiSchemaError.toString());
-        logger.error(this.getClass().getName(), apiSchemaError);
+//        logger.error(this.getClass().getName(), apiSchemaError);
         this.apiSchemaError = apiSchemaError;
     }
 

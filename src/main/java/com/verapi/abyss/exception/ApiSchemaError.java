@@ -32,22 +32,22 @@ public class ApiSchemaError {
     }
 
     public ApiSchemaError setUsermessage(String usermessage) {
-        this.usermessage = usermessage;
+        this.usermessage = (usermessage == null) ? "null" : usermessage;
         return this;
     }
 
     public ApiSchemaError setInternalmessage(String internalmessage) {
-        this.internalmessage = internalmessage;
+        this.internalmessage = (internalmessage == null) ? "null" : internalmessage;
         return this;
     }
 
     public ApiSchemaError setDetails(String details) {
-        this.details = details;
+        this.details = (details == null) ? "null" : details;
         return this;
     }
 
     public ApiSchemaError setRecommendation(String recommendation) {
-        this.recommendation = recommendation;
+        this.recommendation = (recommendation == null) ? "null" : recommendation;
         return this;
     }
 
