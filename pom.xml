@@ -19,17 +19,29 @@
     <description>Abyss Exception Project</description>
     <url>https://apiportal.com</url>
 
-    <issueManagement>
-        <system>GitHub Issues</system>
-        <url>https://github.com/apiportal/abyss-exception/issues</url>
-    </issueManagement>
-
     <scm>
         <url>https://github.com/apiportal/abyss-exception</url>
         <connection>scm:git:https://github.com/apiportal/abyss-exception.git</connection>
         <developerConnection>scm:git:https://github.com/apiportal/abyss-exception.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
+
+    <issueManagement>
+        <system>GitHub Issues</system>
+        <url>https://github.com/apiportal/abyss-exception/issues</url>
+    </issueManagement>
+
+    <ciManagement>
+        <system>Travis CI</system>
+        <url>https://travis-ci.org/apiportal-ci/abyss-exception</url>
+    </ciManagement>
+
+    <distributionManagement>
+        <site>
+            <id>site</id>
+            <url>scm:git:https://github.com/apiportal/abyss-exception.git</url>
+        </site>
+    </distributionManagement>
 
     <dependencies>
         <dependency>
