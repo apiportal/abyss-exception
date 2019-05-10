@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/apiportal/abyss-exception.svg?branch=master)](https://travis-ci.org/apiportal/abyss-exception)
+
 # Abyss Exception
 
 This is the repository for Abyss Exception 

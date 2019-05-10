@@ -1,0 +1,20 @@
+language: java
+jdk:
+  - openjdk8
+cache:
+  directories:
+    - "$HOME/.m2"
+before_install:
+  - echo $GPG_SECRET_KEYS | base64 --decode | gpg --import
+  - echo $GPG_OWNERTRUST | base64 --decode | gpg --import-ownertrust
+install:
+  - mvn -s .travis.maven.settings.xml -version -B
+script:
+#  - mvn -s .travis.maven.settings.xml test
+#  - mvn -s .travis.maven.settings.xml clean install -U deploy -P sonatype-oss-release
+  - mvn -s .travis.maven.settings.xml clean install deploy -P sonatype-oss-release
+
+# Send notification to Slack
+notifications:
+  slack:
+    secure: "MrPZRn0zFIRrE2799AulKum/DnF9F21kVqmGGx9H1fl/dVwa50ToAcKJ38VtUgwoCpAqZ2KRrw1AenIvJit5QsH92hG183ELJqDT2eIhqFfc8teWXK+XfcE4rWmo7jsvBdP1oHzaog0Qqjjll/awakTs1JgwTA2mGmanC1zWPIGqKZD7qi3X/Y4KnHOFYyl6uJS8TxCQtthvyhIt0z3b2hUV3h9/AmKJ4oDDqs2NTUoCO1k9uThufjUsgV+jRuphzY3xQUzTMhDyqAKjb29iVDRt9ZBv7Cxuy7dJBNMIHRFl4fl2y2k1tdeViXhn44/tAcQRIz9rEEu1h8lGYV9osiZVCDl5m382ixkRM6iCiDmou/deJUK1Ws4R1FiJpgjdjB9gLRBhQHaqImyTl5mHfF2/lKOgbuPiPsMHZ6hB94/jS2ELQTnCT+mth42HTiYTGskVe6wmUhC/MeQ8b7WtSTnAxYmNwdu3W75ITqvYDQTc2JkIWCGDAh5fnPEkQ7k2UOAn7u6DbsEoxxEgfok/3TNGBBz2OGZMl+c95QjlNJxFcygpIa70xvRbzzGPlxeEZ4x4SJ02xDmfweNQ89GHgNfgwGDAZFRl5yaSPYsYLIfUr5oKcldxUCNLd2ZVLyy3ugLN3SV4AiBub2r1ZpWmfOpQxtJGl3vFSRQKX24pK2Q="
