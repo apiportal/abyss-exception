@@ -10,6 +10,7 @@ before_install:
 install:
   - mvn -s .travis.maven.settings.xml -version -B
 script:
+  - mvn -s .travis.maven.settings.xml test
   - mvn -s .travis.maven.settings.xml clean install -U deploy -P sonatype-oss-release
 
 # Send notification to Slack
