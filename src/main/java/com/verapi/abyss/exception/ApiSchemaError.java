@@ -31,6 +31,10 @@ public class ApiSchemaError {
     private String timestamp;
     private String path;
 
+    public ApiSchemaError() {
+        // no extra work need while instantiation
+    }
+
     public ApiSchemaError setCode(int code) {
         this.code = code;
         return this;

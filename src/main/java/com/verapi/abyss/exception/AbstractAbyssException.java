@@ -18,20 +18,20 @@ package com.verapi.abyss.exception;
 
 import io.vertx.core.VertxException;
 
-abstract class AbyssException extends VertxException  {
-    AbyssException(String message) {
+abstract class AbstractAbyssException extends VertxException  {
+    AbstractAbyssException(String message) {
         super(message);
     }
 
-    AbyssException(String message, Throwable cause) {
+    AbstractAbyssException(String message, Throwable cause) {
         super(message, cause);
     }
 
-    AbyssException(Throwable cause) {
+    AbstractAbyssException(Throwable cause) {
         super(cause);
     }
 
-    AbyssException(String message, boolean noStackTrace) {
+    AbstractAbyssException(String message, boolean noStackTrace) {
         super(message, noStackTrace);
     }
 }

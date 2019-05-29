@@ -18,10 +18,12 @@ package com.verapi.abyss.exception;
 
 import io.netty.handler.codec.http.HttpResponseStatus;
 
-public class AbyssApiException extends AbyssException {
+public class AbyssApiException extends AbstractAbyssException {
 
-    ApiSchemaError apiSchemaError;
-    HttpResponseStatus httpResponseStatus; //http://www.restapitutorial.com/httpstatuscodes.html
+    protected ApiSchemaError apiSchemaError;
+
+    // avaiable http statuses: http://www.restapitutorial.com/httpstatuscodes.html
+    protected HttpResponseStatus httpResponseStatus;
 
     public AbyssApiException(String message) {
         super(message);

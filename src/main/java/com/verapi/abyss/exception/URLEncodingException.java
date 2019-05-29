@@ -16,9 +16,20 @@
 
 package com.verapi.abyss.exception;
 
-public class NoDataFoundException extends AbstractAbyssException {
-
-    public NoDataFoundException(String message) {
+public class URLEncodingException extends AbyssApplicationException {
+    URLEncodingException(String message) {
         super(message);
+    }
+
+    URLEncodingException(String message, Throwable cause) {
+        super(message, cause);
+    }
+
+    URLEncodingException(Throwable cause) {
+        super(cause);
+    }
+
+    URLEncodingException(String message, boolean noStackTrace) {
+        super(message, noStackTrace);
     }
 }
