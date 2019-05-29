@@ -17,19 +17,19 @@
 package com.verapi.abyss.exception;
 
 public class URLEncodingException extends AbyssApplicationException {
-    URLEncodingException(String message) {
+    public URLEncodingException(String message) {
         super(message);
     }
 
-    URLEncodingException(String message, Throwable cause) {
+    public URLEncodingException(String message, Throwable cause) {
         super(message, cause);
     }
 
-    URLEncodingException(Throwable cause) {
+    public URLEncodingException(Throwable cause) {
         super(cause);
     }
 
-    URLEncodingException(String message, boolean noStackTrace) {
+    public URLEncodingException(String message, boolean noStackTrace) {
         super(message, noStackTrace);
     }
 }
