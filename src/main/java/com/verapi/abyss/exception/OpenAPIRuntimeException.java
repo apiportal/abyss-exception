@@ -16,9 +16,21 @@
 
 package com.verapi.abyss.exception;
 
-public class NoDataFoundException extends AbstractAbyssException {
+public class OpenAPIRuntimeException extends AbstractAbyssException {
 
-    public NoDataFoundException(String message) {
+    public OpenAPIRuntimeException(String message) {
         super(message);
+    }
+
+    public OpenAPIRuntimeException(String message, Throwable cause) {
+        super(message, cause);
+    }
+
+    public OpenAPIRuntimeException(Throwable cause) {
+        super(cause);
+    }
+
+    public OpenAPIRuntimeException(String message, boolean noStackTrace) {
+        super(message, noStackTrace);
     }
 }

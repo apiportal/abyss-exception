@@ -18,10 +18,13 @@ package com.verapi.abyss.exception;
 
 import io.vertx.core.json.JsonObject;
 
+import java.io.Serializable;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class ApiSchemaError {
+public class ApiSchemaError implements Serializable {
+    private static final long serialVersionUID = 4473272139318642980L;
+
     private int code;
     private String usermessage;
     private String internalmessage;
@@ -31,34 +34,8 @@ public class ApiSchemaError {
     private String timestamp;
     private String path;
 
-    public ApiSchemaError setCode(int code) {
-        this.code = code;
-        return this;
-    }
-
-    public ApiSchemaError setUsermessage(String usermessage) {
-        this.usermessage = (usermessage == null) ? "null" : usermessage;
-        return this;
-    }
-
-    public ApiSchemaError setInternalmessage(String internalmessage) {
-        this.internalmessage = (internalmessage == null) ? "null" : internalmessage;
-        return this;
-    }
-
-    public ApiSchemaError setDetails(String details) {
-        this.details = (details == null) ? "null" : details;
-        return this;
-    }
-
-    public ApiSchemaError setRecommendation(String recommendation) {
-        this.recommendation = (recommendation == null) ? "null" : recommendation;
-        return this;
-    }
-
-    public ApiSchemaError setMoreinfo(URL moreinfo) {
-        this.moreinfo = moreinfo;
-        return this;
+    public ApiSchemaError() {
+        // no extra work need while instantiation
     }
 
     public ApiSchemaError setMoreinfoURLasString(String moreinfo) {
@@ -70,17 +47,6 @@ public class ApiSchemaError {
         return this;
     }
 
-
-    public ApiSchemaError setTimestamp(String timestamp) {
-        this.timestamp = timestamp;
-        return this;
-    }
-
-    public ApiSchemaError setPath(String path) {
-        this.path = path;
-        return this;
-    }
-
     public JsonObject toJson() {
         return JsonObject.mapFrom(this);
     }
@@ -89,32 +55,72 @@ public class ApiSchemaError {
         return code;
     }
 
+    public ApiSchemaError setCode(int code) {
+        this.code = code;
+        return this;
+    }
+
     public String getUsermessage() {
         return usermessage;
+    }
+
+    public ApiSchemaError setUsermessage(String usermessage) {
+        this.usermessage = (usermessage == null) ? "null" : usermessage;
+        return this;
     }
 
     public String getInternalmessage() {
         return internalmessage;
     }
 
+    public ApiSchemaError setInternalmessage(String internalmessage) {
+        this.internalmessage = (internalmessage == null) ? "null" : internalmessage;
+        return this;
+    }
+
     public String getDetails() {
         return details;
+    }
+
+    public ApiSchemaError setDetails(String details) {
+        this.details = (details == null) ? "null" : details;
+        return this;
     }
 
     public String getRecommendation() {
         return recommendation;
     }
 
+    public ApiSchemaError setRecommendation(String recommendation) {
+        this.recommendation = (recommendation == null) ? "null" : recommendation;
+        return this;
+    }
+
     public URL getMoreinfo() {
         return moreinfo;
+    }
+
+    public ApiSchemaError setMoreinfo(URL moreinfo) {
+        this.moreinfo = moreinfo;
+        return this;
     }
 
     public String getTimestamp() {
         return timestamp;
     }
 
+    public ApiSchemaError setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
+        return this;
+    }
+
     public String getPath() {
         return path;
+    }
+
+    public ApiSchemaError setPath(String path) {
+        this.path = path;
+        return this;
     }
 
 }

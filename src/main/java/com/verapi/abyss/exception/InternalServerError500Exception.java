@@ -21,34 +21,22 @@ import io.netty.handler.codec.http.HttpResponseStatus;
 public class InternalServerError500Exception extends AbyssApiException {
 
     public InternalServerError500Exception(String message) {
-        super(message);
-        this.httpResponseStatus = HttpResponseStatus.INTERNAL_SERVER_ERROR;
+        super(message, HttpResponseStatus.INTERNAL_SERVER_ERROR);
     }
 
     public InternalServerError500Exception(String message, Throwable cause) {
-        super(message, cause);
-        this.httpResponseStatus = HttpResponseStatus.INTERNAL_SERVER_ERROR;
+        super(message, cause, HttpResponseStatus.INTERNAL_SERVER_ERROR);
     }
 
     public InternalServerError500Exception(Throwable cause) {
-        super(cause);
-        this.httpResponseStatus = HttpResponseStatus.INTERNAL_SERVER_ERROR;
+        super(cause, HttpResponseStatus.INTERNAL_SERVER_ERROR);
     }
 
     public InternalServerError500Exception(String message, boolean noStackTrace) {
-        super(message, noStackTrace);
-        this.httpResponseStatus = HttpResponseStatus.INTERNAL_SERVER_ERROR;
+        super(message, noStackTrace, HttpResponseStatus.INTERNAL_SERVER_ERROR);
     }
 
     public InternalServerError500Exception(ApiSchemaError apiSchemaError) {
-        super(apiSchemaError.toString());
-        this.apiSchemaError = apiSchemaError;
-        this.httpResponseStatus = HttpResponseStatus.INTERNAL_SERVER_ERROR;
-        apiSchemaError.setCode(this.httpResponseStatus.code());
-    }
-
-    @Override
-    public ApiSchemaError getApiError() {
-        return (this.apiSchemaError == null) ? new ApiSchemaError() : this.apiSchemaError;
+        super(apiSchemaError, HttpResponseStatus.INTERNAL_SERVER_ERROR);
     }
 }
