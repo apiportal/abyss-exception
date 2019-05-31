@@ -21,34 +21,22 @@ import io.netty.handler.codec.http.HttpResponseStatus;
 public class BadRequest400Exception extends AbyssApiException {
 
     public BadRequest400Exception(String message) {
-        super(message);
-        this.httpResponseStatus = HttpResponseStatus.BAD_REQUEST;
+        super(message, HttpResponseStatus.BAD_REQUEST);
     }
 
     public BadRequest400Exception(String message, Throwable cause) {
-        super(message, cause);
-        this.httpResponseStatus = HttpResponseStatus.BAD_REQUEST;
+        super(message, cause, HttpResponseStatus.BAD_REQUEST);
     }
 
     public BadRequest400Exception(Throwable cause) {
-        super(cause);
-        this.httpResponseStatus = HttpResponseStatus.BAD_REQUEST;
+        super(cause, HttpResponseStatus.BAD_REQUEST);
     }
 
     public BadRequest400Exception(String message, boolean noStackTrace) {
-        super(message, noStackTrace);
-        this.httpResponseStatus = HttpResponseStatus.BAD_REQUEST;
+        super(message, noStackTrace, HttpResponseStatus.BAD_REQUEST);
     }
 
     public BadRequest400Exception(ApiSchemaError apiSchemaError) {
-        super(apiSchemaError.toString());
-        this.apiSchemaError = apiSchemaError;
-        this.httpResponseStatus = HttpResponseStatus.BAD_REQUEST;
-        apiSchemaError.setCode(this.httpResponseStatus.code());
-    }
-
-    @Override
-    public ApiSchemaError getApiError() {
-        return this.apiSchemaError;
+        super(apiSchemaError, HttpResponseStatus.BAD_REQUEST);
     }
 }

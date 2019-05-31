@@ -21,34 +21,22 @@ import io.netty.handler.codec.http.HttpResponseStatus;
 public class TooManyRequests429Exception extends AbyssApiException {
 
     public TooManyRequests429Exception(String message) {
-        super(message);
-        this.httpResponseStatus = HttpResponseStatus.TOO_MANY_REQUESTS;
+        super(message, HttpResponseStatus.TOO_MANY_REQUESTS);
     }
 
     public TooManyRequests429Exception(String message, Throwable cause) {
-        super(message, cause);
-        this.httpResponseStatus = HttpResponseStatus.TOO_MANY_REQUESTS;
+        super(message, cause, HttpResponseStatus.TOO_MANY_REQUESTS);
     }
 
     public TooManyRequests429Exception(Throwable cause) {
-        super(cause);
-        this.httpResponseStatus = HttpResponseStatus.TOO_MANY_REQUESTS;
+        super(cause, HttpResponseStatus.TOO_MANY_REQUESTS);
     }
 
     public TooManyRequests429Exception(String message, boolean noStackTrace) {
-        super(message, noStackTrace);
-        this.httpResponseStatus = HttpResponseStatus.TOO_MANY_REQUESTS;
+        super(message, noStackTrace, HttpResponseStatus.TOO_MANY_REQUESTS);
     }
 
     public TooManyRequests429Exception(ApiSchemaError apiSchemaError) {
-        super(apiSchemaError.toString());
-        this.apiSchemaError = apiSchemaError;
-        this.httpResponseStatus = HttpResponseStatus.TOO_MANY_REQUESTS;
-        apiSchemaError.setCode(this.httpResponseStatus.code());
-    }
-
-    @Override
-    public ApiSchemaError getApiError() {
-        return this.apiSchemaError;
+        super(apiSchemaError, HttpResponseStatus.TOO_MANY_REQUESTS);
     }
 }

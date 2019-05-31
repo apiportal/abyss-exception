@@ -21,34 +21,22 @@ import io.netty.handler.codec.http.HttpResponseStatus;
 public class MethodNotAllowed405Exception extends AbyssApiException {
 
     public MethodNotAllowed405Exception(String message) {
-        super(message);
-        this.httpResponseStatus = HttpResponseStatus.METHOD_NOT_ALLOWED;
+        super(message, HttpResponseStatus.METHOD_NOT_ALLOWED);
     }
 
     public MethodNotAllowed405Exception(String message, Throwable cause) {
-        super(message, cause);
-        this.httpResponseStatus = HttpResponseStatus.METHOD_NOT_ALLOWED;
+        super(message, cause, HttpResponseStatus.METHOD_NOT_ALLOWED);
     }
 
     public MethodNotAllowed405Exception(Throwable cause) {
-        super(cause);
-        this.httpResponseStatus = HttpResponseStatus.METHOD_NOT_ALLOWED;
+        super(cause, HttpResponseStatus.METHOD_NOT_ALLOWED);
     }
 
     public MethodNotAllowed405Exception(String message, boolean noStackTrace) {
-        super(message, noStackTrace);
-        this.httpResponseStatus = HttpResponseStatus.METHOD_NOT_ALLOWED;
+        super(message, noStackTrace, HttpResponseStatus.METHOD_NOT_ALLOWED);
     }
 
     public MethodNotAllowed405Exception(ApiSchemaError apiSchemaError) {
-        super(apiSchemaError.toString());
-        this.apiSchemaError = apiSchemaError;
-        this.httpResponseStatus = HttpResponseStatus.METHOD_NOT_ALLOWED;
-        apiSchemaError.setCode(this.httpResponseStatus.code());
-    }
-
-    @Override
-    public ApiSchemaError getApiError() {
-        return this.apiSchemaError;
+        super(apiSchemaError, HttpResponseStatus.METHOD_NOT_ALLOWED);
     }
 }

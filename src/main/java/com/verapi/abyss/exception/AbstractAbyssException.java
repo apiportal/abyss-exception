@@ -16,9 +16,8 @@
 
 package com.verapi.abyss.exception;
 
-import io.vertx.core.VertxException;
+abstract class AbstractAbyssException extends RuntimeException {
 
-abstract class AbstractAbyssException extends VertxException  {
     AbstractAbyssException(String message) {
         super(message);
     }
@@ -32,6 +31,6 @@ abstract class AbstractAbyssException extends VertxException  {
     }
 
     AbstractAbyssException(String message, boolean noStackTrace) {
-        super(message, noStackTrace);
+        super(message, null, !noStackTrace, !noStackTrace);
     }
 }

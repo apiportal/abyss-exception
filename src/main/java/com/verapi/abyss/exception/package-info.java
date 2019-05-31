@@ -14,23 +14,9 @@
  * limitations under the License.
  */
 
+/**
+ * Abyss exception classes used to produce the Abyss formatted exception producing for the Services Layer.
+ * <p>
+ * These classes contain all exceptions for each Http Statuses, No Data Found and URL Enocoding.
+ */
 package com.verapi.abyss.exception;
-
-public class URLEncodingException extends AbstractAbyssException {
-
-    public URLEncodingException(String message) {
-        super(message);
-    }
-
-    public URLEncodingException(String message, Throwable cause) {
-        super(message, cause);
-    }
-
-    public URLEncodingException(Throwable cause) {
-        super(cause);
-    }
-
-    public URLEncodingException(String message, boolean noStackTrace) {
-        super(message, noStackTrace);
-    }
-}

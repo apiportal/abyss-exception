@@ -21,34 +21,22 @@ import io.netty.handler.codec.http.HttpResponseStatus;
 public class NotImplemented501Exception extends AbyssApiException {
 
     public NotImplemented501Exception(String message) {
-        super(message);
-        this.httpResponseStatus = HttpResponseStatus.NOT_IMPLEMENTED;
+        super(message, HttpResponseStatus.NOT_IMPLEMENTED);
     }
 
     public NotImplemented501Exception(String message, Throwable cause) {
-        super(message, cause);
-        this.httpResponseStatus = HttpResponseStatus.NOT_IMPLEMENTED;
+        super(message, cause, HttpResponseStatus.NOT_IMPLEMENTED);
     }
 
     public NotImplemented501Exception(Throwable cause) {
-        super(cause);
-        this.httpResponseStatus = HttpResponseStatus.NOT_IMPLEMENTED;
+        super(cause, HttpResponseStatus.NOT_IMPLEMENTED);
     }
 
     public NotImplemented501Exception(String message, boolean noStackTrace) {
-        super(message, noStackTrace);
-        this.httpResponseStatus = HttpResponseStatus.NOT_IMPLEMENTED;
+        super(message, noStackTrace, HttpResponseStatus.NOT_IMPLEMENTED);
     }
 
     public NotImplemented501Exception(ApiSchemaError apiSchemaError) {
-        super(apiSchemaError.toString());
-        this.apiSchemaError = apiSchemaError;
-        this.httpResponseStatus = HttpResponseStatus.NOT_IMPLEMENTED;
-        apiSchemaError.setCode(this.httpResponseStatus.code());
-    }
-
-    @Override
-    public ApiSchemaError getApiError() {
-        return this.apiSchemaError;
+        super(apiSchemaError, HttpResponseStatus.NOT_IMPLEMENTED);
     }
 }

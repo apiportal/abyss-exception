@@ -21,34 +21,22 @@ import io.netty.handler.codec.http.HttpResponseStatus;
 public class UnProcessableEntity422Exception extends AbyssApiException {
 
     public UnProcessableEntity422Exception(String message) {
-        super(message);
-        this.httpResponseStatus = HttpResponseStatus.UNPROCESSABLE_ENTITY;
+        super(message, HttpResponseStatus.UNPROCESSABLE_ENTITY);
     }
 
     public UnProcessableEntity422Exception(String message, Throwable cause) {
-        super(message, cause);
-        this.httpResponseStatus = HttpResponseStatus.UNPROCESSABLE_ENTITY;
+        super(message, cause, HttpResponseStatus.UNPROCESSABLE_ENTITY);
     }
 
     public UnProcessableEntity422Exception(Throwable cause) {
-        super(cause);
-        this.httpResponseStatus = HttpResponseStatus.UNPROCESSABLE_ENTITY;
+        super(cause, HttpResponseStatus.UNPROCESSABLE_ENTITY);
     }
 
     public UnProcessableEntity422Exception(String message, boolean noStackTrace) {
-        super(message, noStackTrace);
-        this.httpResponseStatus = HttpResponseStatus.UNPROCESSABLE_ENTITY;
+        super(message, noStackTrace, HttpResponseStatus.UNPROCESSABLE_ENTITY);
     }
 
     public UnProcessableEntity422Exception(ApiSchemaError apiSchemaError) {
-        super(apiSchemaError.toString());
-        this.apiSchemaError = apiSchemaError;
-        this.httpResponseStatus = HttpResponseStatus.UNPROCESSABLE_ENTITY;
-        apiSchemaError.setCode(this.httpResponseStatus.code());
-    }
-
-    @Override
-    public ApiSchemaError getApiError() {
-        return this.apiSchemaError;
+        super(apiSchemaError, HttpResponseStatus.UNPROCESSABLE_ENTITY);
     }
 }
